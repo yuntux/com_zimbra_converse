@@ -91,11 +91,11 @@ while True:
         success = removeuser3(data[1], data[2], data[3])
     to_ejabberd(success)
 
-#print "resultat : ", auth('admin-adumaine', 'fontaineconsultants.biz','admin-adumaine')
+#print "resultat : ", auth('admin-adumaine', 'fontaineconsultants.biz','true-password')
 #print "resultat : ", auth('admin-adumaine', 'fontaineconsultants.biz','fake-password')
 #print "==============================================="
-#print "resultat : ", auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','0_456417b1824fb22a72f3266dd29d45348527a651_69643d33363a62383262646263612d646261632d343935642d393436302d3637616236646138353761613b6578703d31333a313434373639333033383030393b76763d313a303b747970653d363a7a696d6272613b7469643d31303a313131303236333538373b76657273696f6e3d31333a382e362e305f47415f313135333b637372663d313a313b')
-#print "resultat : ", auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','fake-tocken')
+#print "resultat : ", auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','true-token')
+#print "resultat : ", auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','fake-token')
 
 sys.stdout = bak
 log.close()
