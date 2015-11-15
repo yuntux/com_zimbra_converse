@@ -18,14 +18,29 @@ var ConverseZimlet = com_zimbra_converse_HandlerObject;
  
 /*bosh_service_url points to your Zimbra server!
  * */ 
- 
+
+ConverseZimlet.prototype.getCookie= function() {
+        var jspUrl = this.getResource("get_cookie.jsp");
+        var response = AjxRpc.invoke(null, jspUrl, null, null, true);
+        var authtoken = response.text;
+        return authtoken;
+};
+
+
 ConverseZimlet.prototype.init = function () {
-	this._makeSpaceForConverseBar();
-		converse.initialize({
-			prebind: false,
-			bosh_service_url: "https://192.168.1.17/http-bind",
-			show_controlbox_by_default:true,
-		});
+        //http://community.zimbra.com/collaboration/f/1893/t/1120603
+        var username = this.getUsername();
+        var auth_token = this.getCookie();
+        this._makeSpaceForConverseBar();
+                converse.initialize({
+                        auto_login:true,
+                        jid:username,
+                        password:"zimbra_auth_token++"+auth_token,
+                        prebind: false,
+                        //Be sure it's httpS because we send the ZM_AUTH_TOKEN !
+                        bosh_service_url: "https://mailt.fontaineconsultants.net/http-bind",
+                        show_controlbox_by_default:true,
+                });
 };
 
 /*
@@ -33,9 +48,9 @@ Define a proxy in your Zimbra server:
 * [root@beta ~]# nano /opt/zimbra/conf/nginx/templates/nginx.conf.web.https.default.template
 * before the final } add:
 
-//Make sure NOT to use conversejs for production, as the project does not want this!!
+//Be sure httpS binding and XMPP lisetner are encrypted in production !
 location /http-bind {
-    proxy_pass https://conversejs.org/http-bind/;
+    proxy_pass http://mailt.fontaineconsultants.net:5280/http-bind/;
 
 }
 
