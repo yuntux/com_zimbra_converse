@@ -12,7 +12,7 @@ Lots of people want this? Then development continues, or it will die slowly agai
     su zimbra
     zmproxyctl restart
     
-Copy paste the https://github.com/barrydegraaff/com_zimbra_converse/tree/master/com_zimbra_converse to /opt/zimbra/zimlets-deployed/_dev/com_zimbra_converse
+Copy paste the https://github.com/Zimbra-Community/com_zimbra_converse/tree/master/com_zimbra_converse to /opt/zimbra/zimlets-deployed/_dev/com_zimbra_converse
 
 And configure your server in:
 
