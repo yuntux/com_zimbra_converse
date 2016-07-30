@@ -109,11 +109,13 @@ def ejabberd_hook():
                         log = open('/var/log/ejabberd/zimbra_auth', 'a')
 
 def test_mode() :
-#    log_file(auth('adumaine', 'fontaine-consultants.fr','true-password'))
-#    log_file( auth('admin-adumaine', 'fontaineconsultants.biz','fake-password'))
-#    log_file("===============================================")
-#    log_file(auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','true-token'))
-#    log_file(auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','fake-token'))
+    log_file(auth('adumaine', 'fontaine-consultants.fr','true-password'))
+    log_file( auth('admin-adumaine', 'fontaineconsultants.biz','fake-password'))
+    log_file("===============================================")
+    log_file(auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','true-token'))
+    log_file(auth('zimbra_auth_token++admin-adumaine', 'fontaineconsultants.biz','fake-token'))
 
 #test_mode()
 ejabberd_hook()
+
+log.close()
