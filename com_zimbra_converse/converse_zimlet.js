@@ -38,7 +38,7 @@ ConverseZimlet.prototype.init = function () {
                         password:"zimbra_auth_token++"+auth_token,
                         prebind: false,
                         //Be sure it's httpS because we send the ZM_AUTH_TOKEN !
-                        bosh_service_url: "https://mailt.fontaineconsultants.net/http-bind",
+                        bosh_service_url: "https://mail.fontaine-consultants.fr/http-bind",
                         show_controlbox_by_default:true,
                 });
 };
