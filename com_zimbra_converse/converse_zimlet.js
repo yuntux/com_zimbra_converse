@@ -32,6 +32,7 @@ ConverseZimlet.prototype.init = function () {
         var username = this.getUsername();
         var auth_token = this.getCookie();
         this._makeSpaceForConverseBar();
+        require(['converse'], function (converse) {
                 converse.initialize({
                         auto_login:true,
                         jid:username,
@@ -41,6 +42,7 @@ ConverseZimlet.prototype.init = function () {
                         bosh_service_url: "https://mail.fontaine-consultants.fr/http-bind",
                         show_controlbox_by_default:true,
                 });
+        });
 };
 
 /*
