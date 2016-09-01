@@ -21,11 +21,13 @@ var ConverseZimlet = com_zimbra_converse_HandlerObject;
  
 ConverseZimlet.prototype.init = function () {
 	this._makeSpaceForConverseBar();
+	require(['converse'], function (converse) {
 		converse.initialize({
 			prebind: false,
 			bosh_service_url: "https://192.168.1.17/http-bind",
 			show_controlbox_by_default:true,
 		});
+	});
 };
 
 /*
